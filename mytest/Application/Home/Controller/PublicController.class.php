@@ -6,7 +6,8 @@ class PublicController extends Controller {
     public function login(){
 
         if(session("userid")){
-            $this->success("您已经登录了！", "../../Home/Index/menu");
+            $this->success("您已经登录了！", __APP__."/Home/Index/menu");
+            die;
         }
         if(IS_POST){
 
