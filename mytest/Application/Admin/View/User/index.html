@@ -1,0 +1,349 @@
+<include file="./Application/Home/View/Common/header.html" />
+<body>
+		<div class="navbar navbar-default" id="navbar">
+			<script type="text/javascript">
+				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+			</script>
+
+			<div class="navbar-container" id="navbar-container">
+				
+				<include file="./Application/Home/View/Common/navbar_header.html" />
+				
+			</div><!-- /.container -->
+		</div>
+
+		<div class="main-container" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+
+			<div class="main-container-inner">
+				<a class="menu-toggler" id="menu-toggler" href="#">
+					<span class="menu-text"></span>
+				</a>
+
+				<include file="./Application/Admin/View/Common/left.html" />
+
+								<div class="main-content">
+					<div class="breadcrumbs" id="breadcrumbs">
+						<script type="text/javascript">
+							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+						</script>
+
+						<ul class="breadcrumb">
+							<li>
+								<a href="__APP__/Home/Index/menu"><i class="icon-home home-icon" ></i></a>
+								<a href="#">Admin模块</a>
+							</li>
+
+							<li>
+								<a href="__APP__/Admin/User/index">用户管理</a>
+							</li>
+							<li class="active">用户列表</li>
+						</ul><!-- .breadcrumb -->
+
+						<div class="nav-search" id="nav-search">
+							<form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="icon-search nav-search-icon"></i>
+								</span>
+							</form>
+						</div><!-- #nav-search -->
+					</div>
+
+					<div class="page-content">
+						<div class="page-header">
+							<h1>
+								用户管理
+								<small>
+									<i class="icon-double-angle-right"></i>
+									用户列表
+								</small>
+							</h1>
+						</div><!-- /.page-header -->
+								<div class="row">
+									<div class="col-xs-12 col-sm-4 widget-container-span">
+										<div class="widget-box collapsed">
+											<div class="widget-header widget-header-small header-color-orange">
+												<h6>
+													新增
+												</h6>
+
+												<div class="widget-toolbar">
+
+													<a href="#" data-action="collapse">
+														<i class="icon-chevron-down"></i>
+													</a>
+
+												</div>
+											</div>
+
+											<div class="widget-body">
+												<div class="widget-main">
+		<form class="form-horizontal" role="form" name="add_rule_form" id="add_rule_form" method="post" action="__APP__/Admin/User/addUser">
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> username </label>
+
+				<div class="col-sm-9">
+					<input type="text" id="a_username" name="form[username]" class="col-xs-10 col-sm-5" />
+				</div>
+			</div>
+
+			<div class="space-4"></div>
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-input-readonly"> password </label>
+
+				<div class="col-sm-9">
+					<input type="password" class="col-xs-10 col-sm-5" id="a_password" name="form[password]" />
+				</div>
+			</div>
+
+		<div class="modal-footer">
+              	<button type="button" class="btn btn-primary" onclick="a_form()">保存</button>
+      	</div>
+		</form>
+		<script>
+			function ltrim(s){
+
+			    return s.replace( /^\s*/,"");
+
+			}
+
+			//去右空格;
+
+			function rtrim(s){
+
+			    return s.replace( /\s*$/,"");
+
+			}
+			function trim(s){
+
+			    return ltrim(rtrim(s));
+
+			}
+			function a_form(){
+				var a_username = trim($('#a_username').val());
+				var a_password = trim($('#a_password').val());
+				if(a_username.length == 0){
+					alert('username 不能为空！');
+					return false;
+				}
+				if(a_password.length == 0){
+					alert('password 不能为空！');
+					return false;
+				}
+				document.getElementById('add_rule_form').submit();
+			}
+		</script>
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">编辑</h4>
+      </div>
+      <div class="modal-body">
+		<form class="form-horizontal" role="form" name="edit_form" id="edit_form" method="post" action="__APP__/Admin/User/edit">
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> id </label>
+
+				<div class="col-sm-9">
+					<input type="text" id="e_id" name="form[id]" readOnly="true" class="col-xs-10 col-sm-1" />
+				</div>
+			</div>
+
+			<div class="space-4"></div>
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> username </label>
+
+				<div class="col-sm-9">
+					<input type="text" id="e_username" name="form[username]" class="col-xs-10 col-sm-5" />
+				</div>
+			</div>
+
+			<div class="space-4"></div>
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-input-readonly"> 旧密码 </label>
+
+				<div class="col-sm-9">
+					<input type="password" class="col-xs-10 col-sm-5" id="e_password" name="form[password]" />
+				</div>
+			</div>
+
+			<div class="space-4"></div>
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-4">新密码</label>
+
+				<div class="col-sm-9">
+					<input class="col-xs-10 col-sm-5" type="password" id="e_password_new" name="form[password_new]"  />
+					<div class="space-2"></div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-5">确认新密码</label>
+
+				<div class="col-sm-9">
+					<div class="clearfix">
+						<input type="password" class="col-xs-10 col-sm-5" id="e_password_new_con" name="form[password_new_con]" />
+					</div>
+
+					<div class="space-2"></div>
+				</div>
+			</div>
+
+			
+
+		<div class="modal-footer">
+        	<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        	<button type="button" class="btn btn-primary" onclick="e_form()">保存</button>
+      	</div>
+		</form>
+		<script>
+			function e_form(){
+				document.getElementById('edit_form').submit();
+			}
+		</script>
+	</div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--del modal-->
+<!-- Modal -->
+<div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">删除用户</h4>
+      </div>
+      <div class="modal-body">
+      	<h4 class="modal-title" id="myModalLabel">确认删除吗？</h4>
+		<form class="form-horizontal" role="form" name="del_form" id="del_form" method="post" action="__APP__/Admin/User/delUser">
+			<input type="hidden" id="del_id" name="del_id" value="">
+		<div class="modal-footer">
+        	<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        	<button type="button" class="btn btn-primary" onclick="d_form()">确认</button>
+      	</div>
+		</form>
+		<script>
+			function d_form(){
+				document.getElementById('del_form').submit();
+			}
+		</script>
+	</div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--del modal-->
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="table-responsive">
+									<table id="sample-table-2" class="table table-striped table-bordered table-hover">
+										<thead>
+											<tr>
+												<th>id</th>
+												<th>username</th>
+												<th>group</th>
+												<th>管理</th>
+											</tr>
+										</thead>
+											<script>
+												function edit(i){
+													
+													$('#e_id').val($('#c_id_'+i).html());
+													$('#e_username').val($('#c_username_'+i).html());
+												}
+												function del(i){
+													$('#del_id').val(i);
+												}
+											</script>
+										<tbody>
+											<volist name="user" id="u">
+											<tr>
+												<td id="c_id_{$u.id}">{$u.id}</td>
+												<td id="c_username_{$u.id}">{$u.username}</td>
+												<td>{$u.title}</td>
+												<td>
+													<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+														<a class="green" href="#" onclick="edit({$u.id})">
+															<i class="icon-pencil bigger-130"  data-toggle="modal" data-target="#myModal"></i>
+														</a>
+														<a class="red" href="#" onclick="del({$u.id})">
+															<i class="icon-trash bigger-130" data-toggle="modal" data-target="#delModal"></i>
+														</a>
+													</div>
+												</td>
+											</tr>
+											</volist>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>		
+					</div><!-- /.page-content -->
+				</div><!-- /.main-content -->
+
+				<include file="./Application/Home/View/Common/config.html" />
+
+			</div><!-- /.main-container-inner -->
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="icon-double-angle-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+
+		<!--[if !IE]> -->
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<![endif]-->
+
+		<!--[if !IE]> -->
+
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='__PUBLIC__/assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+		</script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='__PUBLIC__/assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+
+		<script type="text/javascript">
+			if("ontouchend" in document) document.write("<script src='__PUBLIC__/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+		</script>
+		<script src="__PUBLIC__/assets/js/bootstrap.min.js"></script>
+		<script src="__PUBLIC__/assets/js/typeahead-bs2.min.js"></script>
+
+		<!-- page specific plugin scripts -->
+		<script src="__PUBLIC__/assets/js/fuelux/fuelux.tree.min.js"></script>
+
+		<!-- ace scripts -->
+
+		<script src="__PUBLIC__/assets/js/ace-elements.min.js"></script>
+		<script src="__PUBLIC__/assets/js/ace.min.js"></script>
+<include file="./Application/Home/View/Common/footer.html" />

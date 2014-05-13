@@ -1,0 +1,561 @@
+<include file="./Application/Home/View/Common/header.html" />
+<body>
+		<div class="navbar navbar-default" id="navbar">
+			<script type="text/javascript">
+				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+			</script>
+
+			<div class="navbar-container" id="navbar-container">
+				
+				<include file="./Application/Home/View/Common/navbar_header.html" />
+				
+			</div><!-- /.container -->
+		</div>
+
+		<div class="main-container" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+
+			<div class="main-container-inner">
+				<a class="menu-toggler" id="menu-toggler" href="#">
+					<span class="menu-text"></span>
+				</a>
+
+				<include file="./Application/Admin/View/Common/left.html" />
+
+								<div class="main-content">
+					<div class="breadcrumbs" id="breadcrumbs">
+						<script type="text/javascript">
+							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+						</script>
+
+						<ul class="breadcrumb">
+							<li>
+								<a href="__APP__/Home/Index/menu"><i class="icon-home home-icon" ></i></a>
+								<a href="#">Admin模块</a>
+							</li>
+
+							<li>
+								<a href="__APP__/Admin/Group/index">分组管理</a>
+							</li>
+							<li class="active">分组列表</li>
+						</ul><!-- .breadcrumb -->
+
+						<div class="nav-search" id="nav-search">
+							<form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="icon-search nav-search-icon"></i>
+								</span>
+							</form>
+						</div><!-- #nav-search -->
+					</div>
+
+					<div class="page-content">
+						<div class="page-header">
+							<h1>
+								分组管理
+								<small>
+									<i class="icon-double-angle-right"></i>
+									分组列表
+								</small>
+							</h1>
+						</div><!-- /.page-header -->
+								<div class="row">
+									<div class="col-xs-12 col-sm-4 widget-container-span">
+										<div class="widget-box collapsed">
+											<div class="widget-header widget-header-small header-color-orange">
+												<h6>
+													新增
+												</h6>
+
+												<div class="widget-toolbar">
+
+													<a href="#" data-action="collapse">
+														<i class="icon-chevron-down"></i>
+													</a>
+
+												</div>
+											</div>
+
+											<div class="widget-body">
+												<div class="widget-main">
+		<form class="form-horizontal" role="form" name="add_group_form" id="add_group_form" method="post" action="__APP__/Admin/Group/addGroup">
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> title </label>
+
+				<div class="col-sm-9">
+					<input type="text" id="a_title" name="form[title]" class="col-xs-10 col-sm-5" />
+				</div>
+			</div>
+
+			<div class="space-4"></div>
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-input-readonly"> status </label>
+
+				<div class="col-sm-9">
+					<input type="text" class="col-xs-10 col-sm-5" id="a_status" name="form[status]" />
+				</div>
+			</div>
+
+		<div class="modal-footer">
+              	<button type="button" class="btn btn-primary" onclick="a_form()">保存</button>
+      	</div>
+		</form>
+		<script>
+			function ltrim(s){
+
+			    return s.replace( /^\s*/,"");
+
+			}
+
+			//去右空格;
+
+			function rtrim(s){
+
+			    return s.replace( /\s*$/,"");
+
+			}
+			function trim(s){
+
+			    return ltrim(rtrim(s));
+
+			}
+			function a_form(){
+				var a_title = trim($('#a_title').val());
+				var a_status = trim($('#a_status').val());
+				if(a_title.length == 0){
+					alert('title 不能为空！');
+					return false;
+				}
+				if(a_status.length == 0){
+					alert('status 不能为空！');
+					return false;
+				}
+				document.getElementById('add_group_form').submit();
+			}
+		</script>
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">编辑</h4>
+      </div>
+      <div class="modal-body">
+		<form class="form-horizontal" role="form" name="edit_form" id="edit_form" method="post" action="__APP__/Admin/Group/edit">
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> id </label>
+
+				<div class="col-sm-9">
+					<input type="text" id="e_id" name="form[id]" readOnly="true" class="col-xs-10 col-sm-1" />
+				</div>
+			</div>
+
+			<div class="space-4"></div>
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> title </label>
+
+				<div class="col-sm-9">
+					<input type="text" id="e_title" name="form[title]" class="col-xs-10 col-sm-5" />
+				</div>
+			</div>
+
+			<div class="space-4"></div>
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-input-readonly"> status </label>
+
+				<div class="col-sm-9">
+					<input type="text" class="col-xs-10 col-sm-5" id="e_status" name="form[status]" />
+				</div>
+			</div>
+
+			<div class="space-4"></div>
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-4">rules</label>
+
+				<div class="col-sm-9">
+					<input class="col-xs-10 col-sm-5" type="text" id="e_rules" name="form[rules]"  />
+					<div class="space-2"></div>
+				</div>
+			</div>
+
+		<div class="modal-footer">
+        	<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        	<button type="button" class="btn btn-primary" onclick="e_form()">保存</button>
+      	</div>
+		</form>
+		<script>
+			function e_form(){
+				document.getElementById('edit_form').submit();
+			}
+		</script>
+	</div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--del modal-->
+<!-- Modal -->
+<div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="delmyModalLabel">删除用户组</h4>
+      </div>
+      <div class="modal-body">
+      	<h4 class="modal-title" id="delmyModalLabel2">确认删除吗？</h4>
+		<form class="form-horizontal" role="form" name="del_form" id="del_form" method="post" action="__APP__/Admin/Group/delGroup">
+			<input type="hidden" id="del_id" name="del_id" value="">
+		<div class="modal-footer">
+        	<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        	<button type="button" class="btn btn-primary" onclick="d_form()">确认</button>
+      	</div>
+		</form>
+		<script>
+			function d_form(){
+				document.getElementById('del_form').submit();
+			}
+		</script>
+	</div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--del modal-->
+
+<!--rulesModel-->
+<!-- Modal -->
+<script>
+function select_all(obj){
+
+ 	allElements = $("input[name^='rule']");
+
+	for(var i = 0; i < allElements.length; i++){
+		
+		if(obj.checked){
+			allElements[i].checked = true;
+		}else{
+			allElements[i].checked = false;
+		}
+	}
+}
+</script>
+<div class="modal fade" id="rulesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="rulesModalLabel">权限分配</h4>
+      </div>
+      <div class="modal-body">
+      	<h4 class="modal-title" id="group_name"></h4>
+			<table>
+				<tr>
+					<td><input type="checkbox" id="controlAll" onclick="select_all(this)"></td>
+					<td>&nbsp;id&nbsp;</td>
+					<td>名称</td>
+					<td>标题</td>
+					<td>状态</td>
+					<td>类型</td>
+					<td>等级</td>
+					<td>父节点id</td>
+					<td>是否显示</td>
+				</tr>
+<script>
+function single_check(obj, n){
+
+	var name = 'rule_'+n;	
+	
+ 	allElements = $("input[name='"+name+"']");
+	for(var i = 0; i < allElements.length; i++){
+
+		if(obj.checked){
+			
+			allElements[i].checked = true;
+		}else{
+			
+			allElements[i].checked = false;
+		}
+	}
+}
+</script>
+			<volist name="rules" id="r">
+				<tr>
+					<td><input type="checkbox" name="rule_{$r.father_id}" id="rule_{$r.id}" onclick="single_check(this,{$r.id})" value="{$r.id}"/></td>
+					<td>&nbsp;{$r.id}&nbsp;</td>
+					<td>{$r.name}</td> <td>{$r.title}</td> <td>&nbsp;{$r.status}&nbsp;</td> <td>&nbsp;{$r.type}&nbsp;</td> <td>&nbsp;{$r.level}&nbsp;</td> <td>&nbsp;{$r.father_id}&nbsp;</td> 
+					<td>&nbsp;{$r.is_show}&nbsp;
+						<if condition="$r.is_show == 1">
+							<i class="icon-eye-open"></i>
+						<elseif condition="$r.is_show == 0" />
+							<i class="icon-eye-close"></i>
+						</if>
+					</td>
+				</tr>
+			</volist>
+			</table>
+		<form class="form-horizontal" role="form" name="rules_form" id="rules_form" method="post" action="__APP__/Admin/Group/ruleAccess">
+			<input type="hidden" id="group_id" name="group_id" value="">
+			<input type="hidden" id="group_rules" name="group_rules" value="">
+		<div class="modal-footer">
+        	<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        	<button type="button" class="btn btn-primary" onclick="r_form()">确认</button>
+      	</div>
+		</form>
+		<script>
+			function r_form(){
+				var elements = $("input[name^='rule']");
+				var s = "";
+				for (var i = 0; i<elements.length; i++) {
+					if(elements[i].checked)
+						s = s + elements[i].value + ','
+				};
+				s = s.substr(0, s.length - 1);
+				document.getElementById('group_rules').value = s;
+				document.getElementById('rules_form').submit();
+			}
+		</script>
+	</div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--rulesModel-->
+
+
+
+<!--usersModel-->
+<!-- Modal -->
+<script>
+function u_select_all(obj){
+
+ 	allElements = $("input[name^='users']");
+
+	for(var i = 0; i < allElements.length; i++){
+		
+		if(obj.checked){
+			allElements[i].checked = true;
+		}else{
+			allElements[i].checked = false;
+		}
+	}
+}
+</script>
+<div class="modal fade" id="usersModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="rulesModalLabel">用户分组</h4>
+      </div>
+      <div class="modal-body">
+      	<h4 class="modal-title" id="user_name"></h4>
+      	<form class="form-horizontal" role="form" name="users_form" id="users_form" method="post" action="__APP__/Admin/Group/userGroup">
+
+			<table>
+				<tr>
+					<td><input type="checkbox" id="controlAll" onclick="u_select_all(this)"></td>
+					<td>&nbsp;id&nbsp;</td>
+					<td>姓名</td>
+				</tr>
+			<volist name="users" id="u">
+				<tr>
+					<td><input type="checkbox" name="users[]" id="user_{$u.id}" value="{$u.id}"/></td>
+					<td>&nbsp;{$u.id}&nbsp;</td>
+					<td>{$u.username}</td> 
+				</tr>
+			</volist>
+			</table>
+			<input type="hidden" id="u_group_id" name="u_group_id" value="">
+		<div class="modal-footer">
+        	<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        	<button type="button" class="btn btn-primary" onclick="u_form()">确认</button>
+      	</div>
+		</form>
+		<script>
+			function u_form(){
+				document.getElementById('users_form').submit();
+			}
+		</script>
+	</div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--usersModel-->
+
+
+
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="table-responsive">
+									<table id="sample-table-2" class="table table-striped table-bordered table-hover">
+										<thead>
+											<tr>
+												<th>id</th>
+												<th>title</th>
+												<th>status</th>
+												<th>rules</th>
+												<th>管理</th>
+											</tr>
+										</thead>
+											<script>
+
+												function edit(i){
+													
+													$('#e_id').val($('#c_id_'+i).html());
+													$('#e_title').val($('#c_title_'+i).html());
+													$('#e_status').val($('#c_status_'+i).html());
+													$('#e_rules').val($('#c_rules_'+i).html());
+													$('#e_title').val($('#c_title_'+i).html());
+												}
+												function del(i){
+													$('#del_id').val(i);
+												}
+												function rules(i){
+													$('#group_id').val(i);
+													$('#group_name').html($('#c_title_'+i).html());													
+													//str = $('#c_rules_'+i).html();
+													<volist name="group" id="g">
+													var rules{$g.id} = new Array();
+													eval("var rules{$g.id} = [{$g.rules}]");
+													</volist>
+													s = "var r=rules"+i;
+													//alert(s);
+													eval(s);
+													//js数组访问第一次成功，第二次点击失效。
+													//rules = new Array();
+													//rules = str.split(",");
+
+													allElements = $("input[name^='rule']");
+
+													for(var n = 0; n < allElements.length; n++){
+														allElements[n].checked = false;
+													}
+
+													for(p = 0; p < r.length; p++){
+
+														document.getElementById('rule_'+r[p]).checked = true;
+													}												 	
+												}
+												function users(i){
+													/*chrome下，此方式在第一次访问时有效，第二次访问无效。
+													s = $('#c_group_user_'+i).val();
+													users = s.split(",");
+													*/
+													<volist name="grouUser" id="g">
+													var user_group_{$key} = new Array();
+													eval("var user_group_{$key} = [{$g}]");
+													</volist>
+													s = "var u=user_group_"+i;
+													
+													eval(s);
+
+												 	allElements = $("input[name^='users']");
+																							 	
+													for(var k = 0; k < allElements.length; k++){
+														allElements[k].checked = false;
+													}
+													for(p = 0; p < u.length; p++){
+														document.getElementById('user_'+u[p]).checked = true;
+													}												 	
+													$('#u_group_id').val(i);
+												}
+											</script>
+										<tbody>
+											<volist name="group" id="g">
+											<tr>
+												<input type="hidden" id="c_group_user_{$g.id}" value="{$grouUser[$g[id]]}">
+												<td id="c_id_{$g.id}">{$g.id}</td>
+												<td id="c_title_{$g.id}">{$g.title}</td>
+												<td id="c_status_{$g.id}">{$g.status}</td>
+												<td id="c_rules_{$g.id}">{$g.rules}</td>
+												<td>
+													<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+														<a class="green" href="#" onclick="edit({$g.id})">
+															<i class="icon-pencil bigger-130"  data-toggle="modal" data-target="#myModal"></i>
+														</a>
+														<a class="red" href="#" onclick="del({$g.id})">
+															<i class="icon-trash bigger-130" data-toggle="modal" data-target="#delModal"></i>
+														</a>
+														<a class="red" href="#" title="权限分配" onclick="rules({$g.id})">
+															<i class="icon-list" data-toggle="modal" data-target="#rulesModal"></i>
+														</a>
+														<a class="red" href="#" title="用户分组" onclick="users({$g.id})">
+															<i class="icon-group" data-toggle="modal" data-target="#usersModal"></i>
+														</a>
+													</div>
+												</td>
+											</tr>
+											</volist>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>		
+					</div><!-- /.page-content -->
+				</div><!-- /.main-content -->
+
+				<include file="./Application/Home/View/Common/config.html" />
+
+			</div><!-- /.main-container-inner -->
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="icon-double-angle-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+
+		<!--[if !IE]> -->
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<![endif]-->
+
+		<!--[if !IE]> -->
+
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='__PUBLIC__/assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+		</script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='__PUBLIC__/assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+
+		<script type="text/javascript">
+			if("ontouchend" in document) document.write("<script src='__PUBLIC__/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+		</script>
+		<script src="__PUBLIC__/assets/js/bootstrap.min.js"></script>
+		<script src="__PUBLIC__/assets/js/typeahead-bs2.min.js"></script>
+
+		<!-- page specific plugin scripts -->
+		<script src="__PUBLIC__/assets/js/fuelux/fuelux.tree.min.js"></script>
+
+		<!-- ace scripts -->
+
+		<script src="__PUBLIC__/assets/js/ace-elements.min.js"></script>
+		<script src="__PUBLIC__/assets/js/ace.min.js"></script>
+<include file="./Application/Home/View/Common/footer.html" />

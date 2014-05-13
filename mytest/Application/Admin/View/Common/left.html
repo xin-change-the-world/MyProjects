@@ -1,0 +1,85 @@
+				<div class="sidebar" id="sidebar">
+					<script type="text/javascript">
+						try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+					</script>
+
+					<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+						<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+							<button class="btn btn-success">
+								<i class="icon-signal"></i>
+							</button>
+
+							<button class="btn btn-info">
+								<i class="icon-pencil"></i>
+							</button>
+
+							<button class="btn btn-warning">
+								<i class="icon-group"></i>
+							</button>
+
+							<button class="btn btn-danger">
+								<i class="icon-cogs"></i>
+							</button>
+						</div>
+
+						<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+							<span class="btn btn-success"></span>
+
+							<span class="btn btn-info"></span>
+
+							<span class="btn btn-warning"></span>
+
+							<span class="btn btn-danger"></span>
+						</div>
+					</div><!-- #sidebar-shortcuts -->
+					<ul class="nav nav-list">
+						<volist name="_SESSION['menu'][$_SESSION['menu'][0][MODULE_NAME]['id']]" id="m">
+							<if condition = " isset($_SESSION['menu'][$m['id']]) ">
+								<li
+									class="active open"
+								>
+									<a href="#" class="dropdown-toggle">
+										<i class="icon-list"></i>
+										<span class="menu-text"> {$m.title} </span>
+
+										<b class="arrow icon-angle-down"></b>
+									</a>
+
+									<ul class="submenu">
+										<volist name="_SESSION['menu'][$m['id']]" id="sub_m">
+										<li
+										<if condition = "MODULE_NAME.'/'.CONTROLLER_NAME.'/'.ACTION_NAME == $sub_m['name']">
+											class="active open"
+										</if>
+										>
+											<a href="__APP__/{$sub_m.name}">
+												<i class="icon-double-angle-right"></i>
+												{$sub_m.title}
+											</a>
+										</li>
+										</volist>
+									</ul>
+								</li>
+							<else />
+								<li 
+								<if condition = "MODULE_NAME.'/'.CONTROLLER_NAME.'/'.ACTION_NAME == $m['name']">
+									class="active"
+								</if>
+								>
+									<a href="__APP__/{$m.name}">
+										<i class="icon-dashboard"></i>
+										<span class="menu-text"> {$m.title} </span>
+									</a>
+								</li>
+							</if>
+						</volist>
+					</ul><!-- /.nav-list -->
+
+					<div class="sidebar-collapse" id="sidebar-collapse">
+						<i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+					</div>
+
+					<script type="text/javascript">
+						try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+					</script>
+				</div>
