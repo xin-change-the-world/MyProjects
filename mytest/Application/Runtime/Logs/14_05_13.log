@@ -9113,3 +9113,30 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000318s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000348s ]
 
+[ 2014-05-13T15:58:55+08:00 ] 127.0.0.1 /MyProjects/mytest/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000306s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000423s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000467s ]
+INFO: [ action_name ] --START--
+SQL: SHOW COLUMNS FROM `think_auth_group_access` [ RunTime:0.010972s ]
+SQL: SELECT `rules` FROM think_auth_group_access a INNER JOIN think_auth_group g on a.group_id=g.id  WHERE ( a.uid='1' and g.status='1' )  [ RunTime:0.000658s ]
+SQL: SHOW COLUMNS FROM `think_auth_rule` [ RunTime:0.002461s ]
+SQL: SELECT `condition`,`name` FROM `think_auth_rule` WHERE ( `id` IN ('10','24','27','23','22','20','25','26','9','12','14','11','6','16','19','18','17','8','7','1','5','21') ) AND ( `type` = 'Home' ) AND ( `status` = 1 )  [ RunTime:0.000374s ]
+INFO: Run Home\Behaviors\AuthCheckBehavior [ RunTime:0.024376s ]
+INFO: [ action_name ] --END-- [ RunTime:0.024463s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000130s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000182s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017541s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017597s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001155s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001221s ]
+

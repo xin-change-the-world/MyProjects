@@ -29,7 +29,8 @@ class PublicController extends Controller {
                 }
                 session('menu',$newAuthList);
                 
-                $this->success("登录成功", "../../Home/Index/menu");
+                $this->success("登录成功", __APP__."/Home/Index/menu");
+                die;
             }else{
                 
                 $this->assign('username',$username);

@@ -7,11 +7,11 @@
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<!-- basic styles -->
-		<link href="/Public/assets/css/bootstrap.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="/Public/assets/css/font-awesome.min.css" />
+		<link href="/MyProjects/mytest/Public/assets/css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="/MyProjects/mytest/Public/assets/css/font-awesome.min.css" />
 
 		<!--[if IE 7]>
-		  <link rel="stylesheet" href="/Public/assets/css/font-awesome-ie7.min.css" />
+		  <link rel="stylesheet" href="/MyProjects/mytest/Public/assets/css/font-awesome-ie7.min.css" />
 		<![endif]-->
 
 		<!-- page specific plugin styles -->
@@ -21,26 +21,26 @@
 
 		<!-- ace styles -->
 
-		<link rel="stylesheet" href="/Public/assets/css/ace.min.css" />
-		<link rel="stylesheet" href="/Public/assets/css/ace-rtl.min.css" />
-		<link rel="stylesheet" href="/Public/assets/css/ace-skins.min.css" />
+		<link rel="stylesheet" href="/MyProjects/mytest/Public/assets/css/ace.min.css" />
+		<link rel="stylesheet" href="/MyProjects/mytest/Public/assets/css/ace-rtl.min.css" />
+		<link rel="stylesheet" href="/MyProjects/mytest/Public/assets/css/ace-skins.min.css" />
 
 		<!--[if lte IE 8]>
-		  <link rel="stylesheet" href="/Public/assets/css/ace-ie.min.css" />
+		  <link rel="stylesheet" href="/MyProjects/mytest/Public/assets/css/ace-ie.min.css" />
 		<![endif]-->
 
 		<!-- inline styles related to this page -->
 
 		<!-- ace settings handler -->
 
-		<script src="/Public/assets/js/ace-extra.min.js"></script>
-		<script src="/Public/js/jquery.js"></script>
-		<script src="/Public/js/bootstrap.min.js"></script>
+		<script src="/MyProjects/mytest/Public/assets/js/ace-extra.min.js"></script>
+		<script src="/MyProjects/mytest/Public/js/jquery.js"></script>
+		<script src="/MyProjects/mytest/Public/assets/js/bootstrap.min.js"></script>
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
 		<!--[if lt IE 9]>
-		<script src="/Public/assets/js/html5shiv.js"></script>
-		<script src="/Public/assets/js/respond.min.js"></script>
+		<script src="/MyProjects/mytest/Public/assets/js/html5shiv.js"></script>
+		<script src="/MyProjects/mytest/Public/assets/js/respond.min.js"></script>
 		<![endif]-->
 	</head>
 
@@ -53,7 +53,7 @@
 			<div class="navbar-container" id="navbar-container">
 				
 				<div class="navbar-header pull-left">
-	<a href="/index.php/Home/Index/menu" class="navbar-brand">
+	<a href="/MyProjects/mytest/index.php/Home/Index/menu" class="navbar-brand">
 		<small>
 			<i class="icon-leaf"></i>
 			<?php echo (C("TITLE")); ?>
@@ -64,7 +64,7 @@
 					<ul class="nav ace-nav">
 						<li class="light-blue">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="/Public/assets/avatars/avatar2.png" alt="Jason's Photo" />
+								<img class="nav-user-photo" src="/MyProjects/mytest/Public/assets/avatars/avatar2.png" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>欢迎您,</small>
 									<?php echo (session('username')); ?>
@@ -91,7 +91,7 @@
 								<li class="divider"></li>
 
 								<li>
-									<a href="/index.php/Home/Public/logout">
+									<a href="/MyProjects/mytest/index.php/Home/Public/logout">
 										<i class="icon-off"></i>
 										退出
 									</a>
@@ -1009,7 +1009,7 @@
 															<div class="clearfix">
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Bob Doe's avatar" src="/Public/assets/avatars/user.jpg" />
+																		<img alt="Bob Doe's avatar" src="/MyProjects/mytest/Public/assets/avatars/user.jpg" />
 																	</div>
 
 																	<div class="body">
@@ -1062,7 +1062,7 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Joe Doe's avatar" src="/Public/assets/avatars/avatar2.png" />
+																		<img alt="Joe Doe's avatar" src="/MyProjects/mytest/Public/assets/avatars/avatar2.png" />
 																	</div>
 
 																	<div class="body">
@@ -1115,7 +1115,7 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Jim Doe's avatar" src="/Public/assets/avatars/avatar.png" />
+																		<img alt="Jim Doe's avatar" src="/MyProjects/mytest/Public/assets/avatars/avatar.png" />
 																	</div>
 
 																	<div class="body">
@@ -1168,7 +1168,7 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Alex Doe's avatar" src="/Public/assets/avatars/avatar5.png" />
+																		<img alt="Alex Doe's avatar" src="/MyProjects/mytest/Public/assets/avatars/avatar5.png" />
 																	</div>
 
 																	<div class="body">
@@ -1189,7 +1189,7 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Bob Doe's avatar" src="/Public/assets/avatars/avatar2.png" />
+																		<img alt="Bob Doe's avatar" src="/MyProjects/mytest/Public/assets/avatars/avatar2.png" />
 																	</div>
 
 																	<div class="body">
@@ -1210,7 +1210,7 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Susan's avatar" src="/Public/assets/avatars/avatar3.png" />
+																		<img alt="Susan's avatar" src="/MyProjects/mytest/Public/assets/avatars/avatar3.png" />
 																	</div>
 
 																	<div class="body">
@@ -1231,7 +1231,7 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Phil Doe's avatar" src="/Public/assets/avatars/avatar4.png" />
+																		<img alt="Phil Doe's avatar" src="/MyProjects/mytest/Public/assets/avatars/avatar4.png" />
 																	</div>
 
 																	<div class="body">
@@ -1252,7 +1252,7 @@
 
 																<div class="itemdiv memberdiv">
 																	<div class="user">
-																		<img alt="Alexa Doe's avatar" src="/Public/assets/avatars/avatar1.png" />
+																		<img alt="Alexa Doe's avatar" src="/MyProjects/mytest/Public/assets/avatars/avatar1.png" />
 																	</div>
 
 																	<div class="body">
@@ -1289,7 +1289,7 @@
 															<div class="comments">
 																<div class="itemdiv commentdiv">
 																	<div class="user">
-																		<img alt="Bob Doe's Avatar" src="/Public/assets/avatars/avatar.png" />
+																		<img alt="Bob Doe's Avatar" src="/MyProjects/mytest/Public/assets/avatars/avatar.png" />
 																	</div>
 
 																	<div class="body">
@@ -1345,7 +1345,7 @@
 
 																<div class="itemdiv commentdiv">
 																	<div class="user">
-																		<img alt="Jennifer's Avatar" src="/Public/assets/avatars/avatar1.png" />
+																		<img alt="Jennifer's Avatar" src="/MyProjects/mytest/Public/assets/avatars/avatar1.png" />
 																	</div>
 
 																	<div class="body">
@@ -1379,7 +1379,7 @@
 
 																<div class="itemdiv commentdiv">
 																	<div class="user">
-																		<img alt="Joe's Avatar" src="/Public/assets/avatars/avatar2.png" />
+																		<img alt="Joe's Avatar" src="/MyProjects/mytest/Public/assets/avatars/avatar2.png" />
 																	</div>
 
 																	<div class="body">
@@ -1413,7 +1413,7 @@
 
 																<div class="itemdiv commentdiv">
 																	<div class="user">
-																		<img alt="Rita's Avatar" src="/Public/assets/avatars/avatar3.png" />
+																		<img alt="Rita's Avatar" src="/MyProjects/mytest/Public/assets/avatars/avatar3.png" />
 																	</div>
 
 																	<div class="body">
@@ -1480,7 +1480,7 @@
 													<div class="dialogs">
 														<div class="itemdiv dialogdiv">
 															<div class="user">
-																<img alt="Alexa's Avatar" src="/Public/assets/avatars/avatar1.png" />
+																<img alt="Alexa's Avatar" src="/MyProjects/mytest/Public/assets/avatars/avatar1.png" />
 															</div>
 
 															<div class="body">
@@ -1504,7 +1504,7 @@
 
 														<div class="itemdiv dialogdiv">
 															<div class="user">
-																<img alt="John's Avatar" src="/Public/assets/avatars/avatar.png" />
+																<img alt="John's Avatar" src="/MyProjects/mytest/Public/assets/avatars/avatar.png" />
 															</div>
 
 															<div class="body">
@@ -1528,7 +1528,7 @@
 
 														<div class="itemdiv dialogdiv">
 															<div class="user">
-																<img alt="Bob's Avatar" src="/Public/assets/avatars/user.jpg" />
+																<img alt="Bob's Avatar" src="/MyProjects/mytest/Public/assets/avatars/user.jpg" />
 															</div>
 
 															<div class="body">
@@ -1553,7 +1553,7 @@
 
 														<div class="itemdiv dialogdiv">
 															<div class="user">
-																<img alt="Jim's Avatar" src="/Public/assets/avatars/avatar4.png" />
+																<img alt="Jim's Avatar" src="/MyProjects/mytest/Public/assets/avatars/avatar4.png" />
 															</div>
 
 															<div class="body">
@@ -1577,7 +1577,7 @@
 
 														<div class="itemdiv dialogdiv">
 															<div class="user">
-																<img alt="Alexa's Avatar" src="/Public/assets/avatars/avatar1.png" />
+																<img alt="Alexa's Avatar" src="/MyProjects/mytest/Public/assets/avatars/avatar1.png" />
 															</div>
 
 															<div class="body">
@@ -1694,42 +1694,42 @@
 		<!--[if !IE]> -->
 
 		<script type="text/javascript">
-			window.jQuery || document.write("<script src='/Public/assets/js/jquery-2.0.3.min.js'>"+"<"+"script>");
+			window.jQuery || document.write("<script src='/MyProjects/mytest/Public/assets/js/jquery-2.0.3.min.js'>"+"<"+"script>");
 		</script>
 
 		<!-- <![endif]-->
 
 		<!--[if IE]>
 <script type="text/javascript">
- window.jQuery || document.write("<script src='/Public/assets/js/jquery-1.10.2.min.js'>"+"<"+"script>");
+ window.jQuery || document.write("<script src='/MyProjects/mytest/Public/assets/js/jquery-1.10.2.min.js'>"+"<"+"script>");
 </script>
 <![endif]-->
 
 		<script type="text/javascript">
-			if("ontouchend" in document) document.write("<script src='/Public/assets/js/jquery.mobile.custom.min.js'>"+"<"+"script>");
+			if("ontouchend" in document) document.write("<script src='/MyProjects/mytest/Public/assets/js/jquery.mobile.custom.min.js'>"+"<"+"script>");
 		</script>
-		<script src="/Public/assets/js/bootstrap.min.js"></script>
-		<script src="/Public/assets/js/typeahead-bs2.min.js"></script>
+		<script src="/MyProjects/mytest/Public/assets/js/bootstrap.min.js"></script>
+		<script src="/MyProjects/mytest/Public/assets/js/typeahead-bs2.min.js"></script>
 
 		<!-- page specific plugin scripts -->
 
 		<!--[if lte IE 8]>
-		  <script src="/Public/assets/js/excanvas.min.js"></script>
+		  <script src="/MyProjects/mytest/Public/assets/js/excanvas.min.js"></script>
 		<![endif]-->
 
-		<script src="/Public/assets/js/jquery-ui-1.10.3.custom.min.js"></script>
-		<script src="/Public/assets/js/jquery.ui.touch-punch.min.js"></script>
-		<script src="/Public/assets/js/jquery.slimscroll.min.js"></script>
-		<script src="/Public/assets/js/jquery.easy-pie-chart.min.js"></script>
-		<script src="/Public/assets/js/jquery.sparkline.min.js"></script>
-		<script src="/Public/assets/js/flot/jquery.flot.min.js"></script>
-		<script src="/Public/assets/js/flot/jquery.flot.pie.min.js"></script>
-		<script src="/Public/assets/js/flot/jquery.flot.resize.min.js"></script>
+		<script src="/MyProjects/mytest/Public/assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+		<script src="/MyProjects/mytest/Public/assets/js/jquery.ui.touch-punch.min.js"></script>
+		<script src="/MyProjects/mytest/Public/assets/js/jquery.slimscroll.min.js"></script>
+		<script src="/MyProjects/mytest/Public/assets/js/jquery.easy-pie-chart.min.js"></script>
+		<script src="/MyProjects/mytest/Public/assets/js/jquery.sparkline.min.js"></script>
+		<script src="/MyProjects/mytest/Public/assets/js/flot/jquery.flot.min.js"></script>
+		<script src="/MyProjects/mytest/Public/assets/js/flot/jquery.flot.pie.min.js"></script>
+		<script src="/MyProjects/mytest/Public/assets/js/flot/jquery.flot.resize.min.js"></script>
 
 		<!-- ace scripts -->
 
-		<script src="/Public/assets/js/ace-elements.min.js"></script>
-		<script src="/Public/assets/js/ace.min.js"></script>
+		<script src="/MyProjects/mytest/Public/assets/js/ace-elements.min.js"></script>
+		<script src="/MyProjects/mytest/Public/assets/js/ace.min.js"></script>
 
 		<!-- inline scripts related to this page -->
 
