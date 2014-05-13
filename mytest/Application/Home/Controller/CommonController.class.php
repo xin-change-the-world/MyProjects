@@ -9,7 +9,7 @@ class CommonController extends Controller {
     		$name = MODULE_NAME . '/' . CONTROLLER_NAME . '/' . ACTION_NAME;
         	\Think\Hook::listen('action_name', $name);
     	}else{
-    		$this->error('您还没有登录，请登录后再进行操作！','../../Home/Public/login',5);
+    		$this->error('您还没有登录，请登录后再进行操作！',__APP__.'/Home/Public/login',5);
     	}
     }
 }
