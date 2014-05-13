@@ -6,7 +6,7 @@ use Think;
 class GroupController extends \Home\Controller\CommonController {
 
     public function index(){
-    
+        
     	$Group = new \Admin\Model\AuthGroupModel();
         $data = $Group->order('title')->select();
         $this->assign("group", $data);
