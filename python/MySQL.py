@@ -107,3 +107,30 @@ class MySQL:
     def close(self):
         u'关闭数据库连接'
         self.__del__()
+if __name__ == '__main__':
+    '''使用样例'''
+    
+    #连接数据库，创建这个类的实例
+    db = MySQL(dbconfig)
+    
+    #操作数据库
+    sql = "SELECT * FROM `test`"
+    db.query(sql);
+    
+    #获取结果列表
+    result = db.fetchAllRows();
+    
+    #相当于php里面的var_dump
+    print result
+    
+    #对行进行循环
+    for row in result:
+        #使用下标进行取值
+        #print row[0]
+        
+        #对列进行循环
+        for colum in row:
+            print colum
+ 
+    #关闭数据库
+    db.close()
