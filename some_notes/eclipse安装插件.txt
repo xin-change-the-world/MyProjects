@@ -9,3 +9,6 @@ http://download.eclipse.org/releases/juno/
 
 pydev:
 http://pydev.org/updates
+
+go:
+http://goclipse.googlecode.com/svn/trunk/goclipse-update-site/
