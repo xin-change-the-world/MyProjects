@@ -1,0 +1,11 @@
+eclipse安装插件
+phpTool插件:
+
+help->Install New Software 
+
+http://download.eclipse.org/releases/juno/
+
+ 展开 Programming Languages->PHP Development Tools (PDF)SDK Feature.
+
+pydev:
+http://pydev.org/updates
