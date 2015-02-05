@@ -12,15 +12,17 @@ file_list = os.listdir(dir)
 file_dict = {}
 file_time_list = []
 for f in file_list:
-    print int(os.path.getmtime(dir+f)),datetime.datetime.fromtimestamp(os.path.getmtime(dir+f)).strftime('%Y-%m-%d %H:%M:%S'),f
+    #print int(os.path.getmtime(dir+f)),datetime.datetime.fromtimestamp(os.path.getmtime(dir+f)).strftime('%Y-%m-%d %H:%M:%S'),f
     f_dict = {}
     f_dict['success_time'] = datetime.datetime.fromtimestamp(os.path.getmtime(dir+f)).strftime('%Y-%m-%d %H:%M:%S')
     f_dict['file_name'] = f
     file_dict[int(os.path.getmtime(dir+f))] = f_dict
     file_time_list.append(int(os.path.getmtime(dir+f)))
-print file_dict
-print file_time_list
-print sorted(file_time_list)
+#print file_dict
+#print file_time_list
+file_time_list = sorted(file_time_list)
+for f in file_time_list:
+    print f, file_dict[f]['success_time'], file_dict[f]['file_name']
 start_time = int(time.mktime(time.strptime(start,'%Y-%m-%d %H:%M:%S')))
 end_time = int(time.mktime(time.strptime(end,'%Y-%m-%d %H:%M:%S')))
 start_file_key = 0
